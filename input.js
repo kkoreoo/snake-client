@@ -30,6 +30,12 @@ const setupInput = (conn) => {
     if (data === 'd') {
       conn.write('Move: right');
     }
+    if (data === 'q') {
+      conn.write("Say: Hello World");
+    }
+    if (data === '2') {
+      conn.write("Say: Gobble Gobble");
+    }
   }
 
   stdin.on('data', handleUserInput);
