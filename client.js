@@ -9,33 +9,19 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
+  //Client outputs a message when succesfully connected to the game server
   conn.on('connect', () => {
     console.log('Succesfully connected to game server!');
   });
   
+  //Name of Snake
   conn.on('connect', () => {
-    conn.write('Name: ATL');
-  })
+    conn.write('Name: BUB');
+  });
   
-  //move up
-  conn.on('connect', () => {
-  })
-  //move down
-  conn.on('connect', () => {
-  })
-  
-  //move left
-  conn.on('data', () => {
-    
-  })
-  //move right
-  conn.on('data', () => {
-    
-  })
-
-  // if we afk
+  // Receives server message
   conn.on('data', (data) => {
-    console.log(`you afk for too long, server says: ${data}`);
+    console.log(`${data}`);
   });
 
   return conn;
